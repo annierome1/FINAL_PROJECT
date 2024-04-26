@@ -1,0 +1,165 @@
+<!-- 
+    About Page
+    Shows Contact, Mission/ History, and Creators
+
+-->
+<!-- Loads static images and begins HTML code-->
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--Allows for Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-E61PJJB5E4"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-E61PJJB5E4');
+    </script>
+<!-- Allows for Google Translate -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<div id="google_translate_element"></div>
+    <div class = "header" ></div>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/timeonsite/1.2.0/timeonsitetracker.js"></script>
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+        }
+    </script>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+<title>Glazer Children's Museum</title>
+<!-- All the CSS code -->
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #6dcff6;
+  }
+er-bar {
+  background: purple;
+  color: white;
+  text-align: center;
+  padding: 10px 20px;
+  /* other styles as needed */
+  }
+  .nav-container {
+    text-align: center;
+    padding: 20px;
+  }
+  .nav-container:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  .nav-button {
+  display: inline-block;
+  margin: 10px; /* Space between buttons */
+  padding: 40px 60px; /* Increase padding to make buttons larger */
+  background: #6a0dad;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  font-size: 24px; /* Increase font size for larger text */
+  transition: background-color 0.5s;
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 4px 6px rgba(0,0,0,0.2); /* Shadow for depth */
+}
+  .nav-button:hover {
+    background-color: #ddd;
+  }
+  .main-content {
+    padding: 20px;
+    text-align: center;
+  }
+  .footer {
+    background: purple;
+    color: white;
+    text-align: center;
+    padding: 10px;
+  }
+  .footer button {
+    color: white;
+    background: #6a0dad;
+    border: none;
+    padding: 10px 20px;
+    margin: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  .footer button:hover {
+    background-color: #7c29a3;
+  }
+  .header-bar {
+    background-color: purple; /* Purple background like the footer */
+    color: white; /* White text color */
+    text-align: center; /* Center the text inside the bar */
+    padding: 10px 0; /* Padding of 10px on top and bottom */
+  }
+  .header-bar button {
+    color: white;
+    background: #6a0dad;
+    border: none;
+    padding: 10px 20px;
+    margin: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  .header-bar button:hover {
+    background-color: #7c29a3;
+  }
+  
+  @media (max-width: 600px) {
+    .nav-container {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+    .header, .main-content, .footer, .footer button {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+  }
+  a.header-link { /* Added class for styling */
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: url('{% static "1.png" %}') no-repeat center center;
+    background-size: cover;
+    padding-top: 25%; /* Responsive height relative to the width */
+    text-decoration: none; /* Removes underline from links */
+  }
+  .header-link:hover {
+    cursor: pointer; /* Optional: Changes the cursor on hover */
+  }
+</style>
+</head>
+<!-- Begins body and has picture as link to homebutton and header bar that links to other pages -->
+<body>
+<a href="{% url 'homepage_view' %}" class="header-link" aria-label="Header Link"></a>
+<div class="header-bar">
+    <button onclick="location.href='{% url 'exhibits' %}'">Exhibits</button>
+    <button onclick="location.href='{% url 'play' %}'">Play</button>
+    <button onclick="location.href='{% url 'moreinfo' %}'">More Info</button>
+    <button onclick="location.href='{% url 'about' %}'">About</button>
+</div>
+</div>
+<!-- Links to museum's Contact and Misson/Hisotry pages -->
+<div class="main-content">
+  <div class="nav-container">
+    <a href="https://glazermuseum.org/mission/" class="nav-button">Mission + History</a>
+    <a href="https://glazermuseum.org/contact/" class="nav-button">Contact</a>
+  </div>
+  <p>This project was created by Sofia Mucci, Annie Rome, Jamil Velez, Mikey Dimooch, Sneha Patel, and Bryton Montgomery</p>
+</div>
+<!-- Footer bar having buttons linking to donation page and hours of operation-->
+<div class="footer">
+  <button onclick="location.href='https://72839.blackbaudhosting.com/72839/Annual-Fund'">Make a Donation</button>
+  <button onclick="location.href='https://glazermuseum.org/visit/#hours'">Hours of Operation</button>
+</div>
+
+</body>
+</html>
